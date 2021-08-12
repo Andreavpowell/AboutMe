@@ -1,5 +1,9 @@
 'use strict';
 
+let score = 0;
+let totalQuestions = 7;
+
+
 let userName = prompt('Please Enter Your Name: ');
 console.log(userName);
 document.write('<h2>' + userName + '</h2>');
@@ -9,6 +13,7 @@ let favoriteColor = prompt('Is my favorite color pink?');
 console.log(favoriteColor);
 if (favoriteColor.toLowerCase() == 'yes'){
   alert('Oh. Maybe you should go...');
+  score++
 } else {
   alert('Sick. You\'re on the right track!');
 }
@@ -17,6 +22,7 @@ let favoriteActivity = prompt('Would I rather be outside instead of indoors?');
 console.log(favoriteActivity);
 if (favoriteActivity.toLowerCase() == 'yes'){
   alert('Nice guess! You got lucky on that one.');
+  score++
 } else {
   alert('You have quite a bit to learn about me.');
 }
@@ -25,6 +31,7 @@ let hairColor = prompt('Do I have blonde hair?');
 console.log(hairColor);
 if (hairColor.toLowerCase() == 'yes'){
   alert('Cool. You\'re paying attention!');
+  score++
 } else {
   alert('Wow. I hope you study harder on your quizzes...');
 }
@@ -33,6 +40,7 @@ let favoriteFood = prompt('Is pizza my favorite food?');
 console.log(favoriteFood);
 if (favoriteFood.toLowerCase() == 'yes'){
   alert('Yes. All food is my favorite food, ' + userName + '.');
+  score++
 } else {
   alert('All food is my favorite. Equality, ' + userName + '.');
 }
@@ -41,6 +49,7 @@ let codingJs = prompt('Am I good at coding JavaScript?');
 console.log(codingJs);
 if (codingJs.toLowerCase() == 'yes'){
   alert('Wrong. You have way too much faith in me.');
+  score++
 } else {
   alert('Absolutely. I have no idea what I\'m doing.');
 }
@@ -55,6 +64,7 @@ let userAttempts = 4;
       }
       if (userGuess == correctGuess) {
           alert('Congrats! You may pass.')
+          score++
           break;
       } else if(userGuess < correctGuess){
           alert('Too low! Guess again.')
@@ -79,6 +89,7 @@ while (attempts < 5 && correctAnswer === false) {
     let currentFruit = favoriteFruit[i];
     if (fruit === currentFruit) {
       alert('Look at you go!');
+      score++
       correctAnswer = true;
     }
   }
@@ -89,3 +100,4 @@ while (attempts < 5 && correctAnswer === false) {
   }
 }
 
+alert(score + 'out of' + totalQuestions + `. Great job! I guess, ` + userName);
