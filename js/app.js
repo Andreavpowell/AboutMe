@@ -122,3 +122,5 @@ questionRandomNumber();
 questionFavFruits();
 
 alert(score + ' out of ' + totalQuestions + `. Great job! I guess, ` + userName + '.');
+
+// 
