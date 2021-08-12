@@ -100,4 +100,4 @@ while (attempts < 5 && correctAnswer === false) {
   }
 }
 
-alert(score + 'out of' + totalQuestions + `. Great job! I guess, ` + userName);
+alert(score + ' out of ' + totalQuestions + `. Great job! I guess, ` + userName + '.');
