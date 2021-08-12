@@ -3,50 +3,89 @@
 let userName = prompt('Please Enter Your Name: ');
 console.log(userName);
 document.write('<h2>' + userName + '</h2>');
-return userName;
 
 
 let favoriteColor = prompt('Is my favorite color pink?');
 console.log(favoriteColor);
-if (userAnswer.toLowerCase() == 'yes'){
-  document.write('<h3>Oh. Maybe you should go...</h3>');
+if (favoriteColor.toLowerCase() == 'yes'){
+  alert('Oh. Maybe you should go...');
 } else {
-  document.write('<h3>Sick. You\'re on the right track.<h3>');
+  alert('Sick. You\'re on the right track!');
 }
 
 let favoriteActivity = prompt('Would I rather be outside instead of indoors?');
-console.log(favoriteAcivity);
-if (userAnswer.toLowerCase() == 'yes'){
-  document.write('<h3>Nice guess! You got lucky on that one.</h3>');
+console.log(favoriteActivity);
+if (favoriteActivity.toLowerCase() == 'yes'){
+  alert('Nice guess! You got lucky on that one.');
 } else {
-  document.write('<h3>Oh. You have quite a bit to learn about me.</h3>');
+  alert('You have quite a bit to learn about me.');
 }
 
 let hairColor = prompt('Do I have blonde hair?');
 console.log(hairColor);
-if (userAnswer.toLowerCase() == 'yes'){
-  document.write('<h3>Cool. You\'re paying attention!</h3>');
+if (hairColor.toLowerCase() == 'yes'){
+  alert('Cool. You\'re paying attention!');
 } else {
-  document.write('<h3>Wow. I hope you study harder on your quizzes...</h3>');
-}
-
-let outsideInside = prompt('Would I rather be outside instead of indoors?');
-console.log(outsideInside);
-if (userAnswer.toLowerCase() == 'yes'){
-  document.write('<h3>Nice guess! You got lucky on that one.</h3>');
-} else {
-  document.write('<h3>Oh. You have quite a bit to learn about me.</h3>');
+  alert('Wow. I hope you study harder on your quizzes...');
 }
 
 let favoriteFood = prompt('Is pizza my favorite food?');
 console.log(favoriteFood);
-if (userAnswer.toLowerCase() == 'yes'){
-  document.write('<h3>Yes. All food is my favorite food, ' + userName + '.<h3>');
+if (favoriteFood.toLowerCase() == 'yes'){
+  alert('Yes. All food is my favorite food, ' + userName + '.');
 } else {
-  document.write('<h3>All food is my favorite. Equality, ' + userName + '.<h3>');
+  alert('All food is my favorite. Equality, ' + userName + '.');
 }
 
+let codingJs = prompt('Am I good at coding JavaScript?');
+console.log(codingJs);
+if (codingJs.toLowerCase() == 'yes'){
+  alert('Wrong. You have way too much faith in me.');
+} else {
+  alert('Absolutely. I have no idea what I\'m doing.');
+}
 
-// Welcome alert with userName
+let correctGuess = Math.floor(Math.random() * 100) + 1;
+  console.log(correctGuess)
+let userAttempts = 4;
+  for(let i = 0; i < userAttempts; i++){
+      let userGuess = prompt('Please enter a number 1 - 100.');
+      while (userGuess < 1 || userGuess > 100){
+          userGuess = prompt('Please enter a number 1 - 100.');
+      }
+      if (userGuess == correctGuess) {
+          alert('Congrats! You may pass.')
+          break;
+      } else if(userGuess < correctGuess){
+          alert('Too low! Guess again.')
+      }  else if(userGuess > correctGuess) {
+          alert('To high! Guess again.')
+      } else {
+          alert('Please type a number.');
+      }
+      console.log(i);
+      if (i == userAttempts - 1){
+          alert('Sike. Correct Answer is: ' + correctGuess + `.`);
+      }
+  }
 
-// Remo - why isnt my app.js linking?
+let attempts = 0;
+let correctAnswer = false;
+let favoriteFruit = ['pineapple', 'strawberry', 'mango'];
+
+while (attempts < 5 && correctAnswer === false) {
+  let fruit = prompt('Guess my favorite fruit!');
+  for (let i = 0; i < favoriteFruit.length; i++) {
+    let currentFruit = favoriteFruit[i];
+    if (fruit === currentFruit) {
+      alert('Look at you go!');
+      correctAnswer = true;
+    }
+  }
+  
+  attempts++;
+  if (correctAnswer === false) {
+    alert('Nope. Think harder!');
+  }
+}
+
